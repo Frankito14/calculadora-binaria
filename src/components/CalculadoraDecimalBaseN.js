@@ -29,11 +29,11 @@ export default function CalculadoraDecimalBaseN()
     return(
         <div className='main-calculator animate__animated animate__fadeInDown'>
             <h1>Pasaje Decimal a Octal</h1>
-            <p>(Solo numeros enteros)</p>
+            <p>(Solo números enteros)</p>
             <div className="form-calculator">
-                <BootstrapInput label="Numero en Decimal" type="number" value={numero} function={HandleNumero}></BootstrapInput>
+                <BootstrapInput label="Número en Decimal" type="number" value={numero} function={HandleNumero}></BootstrapInput>
                 <BootstrapInput label="Base" type="number" value={base} function={HandleBase}></BootstrapInput>
-                <button className="btn btn-primary" onClick={()=>{RealizarPasajeBaseN(numero,base)}}>Mostrar</button>
+                <button className="btn btn-secondary mt-3 mb-4" onClick={()=>{RealizarPasajeBaseN(numero,base)}}>Mostrar</button>
             </div>
             <div className='results-calculator animate__animated animate__fadeInDown'>
                 <h5>Resultados:</h5>

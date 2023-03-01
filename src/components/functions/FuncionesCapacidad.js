@@ -1,4 +1,10 @@
 export const CalcularCapacidadAncho = (ancho)=>{
+    /*
+        Expresar la capacidad de representacion que tiene el ancho dado
+        Retorna un objeto que contiene:
+        resultado: La cantidad de valores que puede representar el ancho dado.
+        pasos: Los rangos de valores representables con el ancho dado
+    */
     let max = Math.pow(2,ancho);
     let valor_minimo = "0".repeat(ancho);
     let valor_maximo = "1".repeat(ancho);

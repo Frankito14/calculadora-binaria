@@ -22,15 +22,15 @@ export default function CalculadoraCapacidad(){
 
     return(
         <div className='main-calculator animate__animated animate__fadeInDown'>
-            <h1>Capacidad de representación </h1>
-            <p>(Solo numeros enteros)</p>
+            <h1>Capacidad de Representación </h1>
+            <p>(Solo números enteros)</p>
             <div className="form-calculator">
-                <BootstrapInput label="Numero en decimal" type="number" value={ancho} function={handleAncho}></BootstrapInput>
-                <button className="btn btn-primary" onClick={()=>{RealizarCapacidad(ancho)}}>Mostrar</button>
+                <BootstrapInput label="Cantidad de bits" type="number" value={ancho} function={handleAncho}></BootstrapInput>
+                <button className="btn btn-secondary mt-3 mb-4" onClick={()=>{RealizarCapacidad(ancho)}}>Mostrar</button>
             </div>
             <div className='results-calculator animate__animated animate__fadeInDown'>
-                <h5>Resultado: {resultado}</h5>
-                <p>Procedimiento:</p>
+                <h5>Resultados:</h5>
+                <p>{resultado}</p>
                 {pasos.map((paso)=>{
                     return(
                     <p key={pasos.indexOf(paso)}> {paso} </p>

@@ -5,7 +5,6 @@ import "./styles/calculator.css"
 export default function CalculadoraBinarioADecimal()
 {
     const [binario, setBinario] = useState(0)
-    const [decimal, setDecimal] = useState(0);
 
     const handleBinario = (e)=>
     {
@@ -28,17 +27,16 @@ export default function CalculadoraBinarioADecimal()
     return(
         <div className='main-calculator animate__animated animate__fadeInDown'>
             <h1>Pasaje Binario a Decimal</h1>
-            <p>(Solo numeros enteros)</p>
+            <p>(Solo números enteros)</p>
             <div className="form-calculator">
-                <BootstrapInput label="Numero en binario" type="number" value={binario} function={handleBinario}></BootstrapInput>
-                <button className="btn btn-primary" onClick={()=>{RealizarPasajeDecimalBinario(binario)}}>Mostrar</button>
+                <BootstrapInput label="Número en binario" type="number" value={binario} function={handleBinario}></BootstrapInput>
+                <button className="btn btn-secondary mt-3 mb-4" onClick={()=>{RealizarPasajeDecimalBinario(binario)}}>Mostrar</button>
             </div>
             <div className='results-calculator animate__animated animate__fadeInDown'>
                 <h5>Resultados:</h5>
-                <p>El numero binario "{binarioResultado}" en decimal es {resultado}</p>
-            
+                <p>El número binario "{binarioResultado}" en decimal es {resultado}</p>
                 {pasos.map((paso)=>{
-                    return(<p key={pasos.indexOf(paso)}>{paso}</p>)
+                    return(<p className="paso" key={pasos.indexOf(paso)}>{paso}</p>)
                 })}
             
                 <p>{resultadoSuma}</p>

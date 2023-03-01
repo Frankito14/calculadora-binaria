@@ -1,6 +1,9 @@
 import {SumarBinarios} from "./FuncionesSumaBinarios";
 
 export const InformarError = (bin)=>{
+    /*
+        Alerta si el binario dado no es valido.
+    */ 
     let error = false;
     for(let i=0;i<bin.length;i++)
     {
@@ -17,6 +20,12 @@ export const ComprobarResultadoMaximo = (res,ancho)=>{
 }
 
 export const PasajeC2 = (bin)=>{
+     /*
+    Realizar el pasaje del binario dado a su complemento c2
+    Devuelve un array con
+        0: El binario dado expresado en su complemento c2
+        1: Pasos del pasaje - Array
+    */
     InformarError(bin);
     const ancho = bin.length
     let i;

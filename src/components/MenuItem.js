@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 export default function MenuItem(props){
     return(
-        <NavLink to={props.route} className="menu-item btn btn-secondary animate__animated animate__fadeIn">
-        <div>
-                    <h5 className='menu-item-text'>{props.text}</h5>
+        <NavLink to={props.route} className="menu-item btn animate__animated animate__fadeIn">
+            <div>
+                <p className='menu-item-text'>{props.text}</p>
             </div>
         </NavLink>    
     )

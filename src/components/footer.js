@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import GithubLogo from "../img/github.svg";
+import React from 'react'
 import ReactLogo from "../img/react.svg";
 import BootstrapLogo from "../img/bootstrap.svg";
 import CSSLogo from "../img/css3.svg";
@@ -8,10 +7,10 @@ import JSLogo from "../img/javascript.svg";
 import ImagenSVG from './ImagenSVG';
 export default function Footer(){
 
-    const [imgSize, setImageSize] = useState("100%")
+    const imgSize = "25em";
     return(
         <div className='footer'>
-            <p className='footer-subtitle'>Made using:</p>
+            <p className='footer-subtitle'>Creado usando:</p>
             <div className='social-media'>
                 <ImagenSVG img={HTMLLogo} title={"HTML5"} width={imgSize}></ImagenSVG>
                 <ImagenSVG img={CSSLogo} title={"CSS3"} width={imgSize}></ImagenSVG>

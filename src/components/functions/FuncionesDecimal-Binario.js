@@ -1,19 +1,27 @@
 export const InformarError = (num)=>{
+    /*Alerta si el numero dado no es un entero*/
     if ((num.includes("."))||(num.includes(",")))
     {
-        alert("No sea menso puso un numero con coma mas vale que no va a funcionar");
+        alert("El numero ingresado no es un entero");
     }
 }
 
 
 export const MayorAZero = (resto)=>{
+    /*
+        Describe si el numero dado es menor a 0 o no
+        En caso de ser menor a 0, devuelve un string, sino devuelve el numero dado
+    */
     if (resto>=0)
         return resto;
     else
-        return "< 0"; 
+        return "Menor a 0"; 
 }
 
 export const ComprobarDesborde = (numero, ancho)=>{
+    /*
+        Describe si hay un desborde (overflow) segun el numero decimal dado y el ancho de bits dado.
+    */
     let numero_maximo;
     numero_maximo = (Math.pow(2,ancho)-1)
     console.log("Capacidad Maxima de representacion = "+numero_maximo);
@@ -25,6 +33,13 @@ export const ComprobarDesborde = (numero, ancho)=>{
 
 export const DecimalABinario = (numero, ancho)=>
 {
+     /*
+    Realizar el pasaje de un numero decimal a binario
+    Devuelve un array con
+        0: El decimal expresado en binario - String
+        1: Pasos del pasaje - Array
+        2: Si tiene overflow - String
+    */
     InformarError(numero);
     const numero_original = numero;
     let numero_resta = numero_original
@@ -45,22 +60,11 @@ export const DecimalABinario = (numero, ancho)=>
         {zero=0;}
         else
         {numero_resta = resto_resta}
-        //console.log(numero_anterior+" - "+"2^"+i+" = "+MayorAZero(resto_resta)+" --> "+zero)
-        steps[i] = (numero_anterior+" - "+"2^"+i+" = "+MayorAZero(resto_resta)+" --> Bit "+i+" = "+zero)
+        steps[i] = `${numero_anterior} - 2^${i} = ${MayorAZero(resto_resta)} → Bit ${i} = ${zero}`
         binary = binary+(zero.toString())
     }
-    //console.log(numero_original+" = ("+binary+")2");
-    //console.log("Capacidad de representacion: "+a+" bits")
-    //console.log(steps);
     return [binary,steps.reverse(),overflow]; //(Numero en binario, pasos, si tiene overflow)
 
     
 }
 
-
-export const MostrarBotonPasos = (binary)=>{
-    if(binary!=0)
-        return(<button className='btn btn-info'>Mostrar pasos</button>)
-    else
-        <button className='btn btn-info' disabled>Mostrar pasos</button>
-}

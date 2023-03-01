@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BootstrapInput from './bootstrap-components/BootstrapInput';
-import {DecimalABinario, MostrarBotonPasos} from "./functions/FuncionesDecimal-Binario";
+import {DecimalABinario} from "./functions/FuncionesDecimal-Binario";
 import "./styles/calculator.css"
 export default function DecimalToBinary()
 {
@@ -30,17 +30,19 @@ export default function DecimalToBinary()
     return(
         <div className='main-calculator animate__animated animate__fadeInDown'>
             <h1>Pasaje Decimal a Binario</h1>
-            <p>(Solo numeros enteros)</p>
+            <p>(Solo números enteros)</p>
             <div className="form-calculator">
-                <BootstrapInput label="Numero en Decimal" type="number" value={numero} function={HandleNumero}></BootstrapInput>
+                <BootstrapInput label="Número en Decimal" type="number" value={numero} function={HandleNumero}></BootstrapInput>
                 <BootstrapInput label="Ancho de Bits" type="number" value={ancho} function={HandleAncho}></BootstrapInput>
-                <button className="btn btn-primary" onClick={()=>{RealizarPasaje(numero,ancho)}}>Mostrar</button>
+                <button className="btn btn-secondary mt-3 mb-4" onClick={()=>{RealizarPasaje(numero,ancho)}}>Mostrar</button>
             </div>
             <div className='results-calculator animate__animated animate__fadeInDown'>
                 <h5>Resultados:</h5>
                 <p>{numeroOriginal+" en un ancho de "+anchoOriginal+" bits = "+numeroBinario}</p>
                 <p>{desbordePasaje}</p>
-                {pasosPasaje.map((paso)=>{return(<li key={pasosPasaje.indexOf(paso)}>{paso}</li>)})}
+                {pasosPasaje.map((paso)=>{
+                    return(<p key={pasosPasaje.indexOf(paso)}>{paso}</p>
+                    )})}
             </div>
         </div>
     )
